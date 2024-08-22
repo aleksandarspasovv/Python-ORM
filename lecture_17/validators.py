@@ -10,6 +10,13 @@ class ValidateName:
             if not (char.isalpha() or char.isspace()):
                 raise ValidationError(self.message)
 
+    def deconstruct(self):
+        return (
+            'main_app.validators.ValidateName',
+            (self.message,),
+            {}
+        )
+
 
 class ValidatePhoneNumber:
     def __init__(self, message):
@@ -20,3 +27,10 @@ class ValidatePhoneNumber:
         right_side = value[4:]
         if not lef_side == '+359' and len(right_side) == 9:
             raise ValidationError(self.message)
+
+    def deconstruct(self):
+        return (
+            'main_app.validators.ValidatePhoneNumber',
+            (self.message,),
+            {}
+        )
