@@ -23,9 +23,7 @@ class ValidatePhoneNumber:
         self.message = message
 
     def __call__(self, value):
-        lef_side = value[:4]
-        right_side = value[4:]
-        if not lef_side == '+359' and len(right_side) == 9:
+        if not value.startswith('+359') or len(value) != 13 or not value[4:].isdigit():
             raise ValidationError(self.message)
 
     def deconstruct(self):
