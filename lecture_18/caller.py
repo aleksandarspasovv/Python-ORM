@@ -1,4 +1,6 @@
 import os
+
+import connection
 import django
 
 # Set up Django
@@ -7,6 +9,8 @@ django.setup()
 
 # Import your models
 from main_app.models import Product, Category, Customer, Order, OrderProduct
+from django.db import connection
+import pprint
 
 
 # Create and run queries
@@ -60,3 +64,10 @@ def add_records_to_database():
 
 # Run and print your queries
 # print(add_records_to_database())
+
+
+# products = Product.objects.all()
+# print(products)
+#
+# customers = Customer.objects.all()
+# print(customers)
