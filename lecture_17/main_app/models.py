@@ -26,4 +26,4 @@ class Customer(models.Model):
         error_messages={'invalid': 'Enter a valid URL'}
     )
 
-    
+
